@@ -159,6 +159,7 @@ import emailjs from "emailjs-com";
 import { init } from "emailjs-com";
 init("user_w0abW0AtI5OP3S8WKSBtc");
 
+/*it works*/
 export default {
   name: "Laboda",
   components: {
