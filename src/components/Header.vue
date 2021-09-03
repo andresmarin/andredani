@@ -41,7 +41,6 @@ export default {
 </script>
 
 <style scoped>
-.main-header:before {
-    background-color: #6d6d6dfc;
-}
+
+
 </style>

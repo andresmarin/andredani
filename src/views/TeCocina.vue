@@ -40,7 +40,7 @@
             <h4 class="timeline__title">Cuota</h4>
             <div class="timeline__desc">
               Estaremos compartiendo un delicioso desayuno, la cuota para toda
-              la actividad es de 7 000. Los cuales debes de cancelar con Diana
+              la actividad es de 7000. Los cuales debes de cancelar con Diana
               Alvarado, a la cuenta IBAN o por SINPE al
               <strong>6293 9959</strong>, en la descripción pueden poner Té y
               las personas invitadas. <br />
@@ -102,28 +102,28 @@
               />
               <div class="rsvp__form-wrapper">
                 <h2 class="rsvp__title">Nos van a acompañar?</h2>
-                <h3 class="rsvp__subtitle">Por favor confirme su asistencia</h3>
+                <h3 class="rsvp__subtitle">Por favor confirma tu asistencia antes del domingo 26 de septiembre para que podamos guardar tu espacio y acomodarnos con los aforos y protocolos sanitarios.</h3>
                 <form class="rsvp__form" @submit.prevent="sendEmail">
                   <input
                     type="text"
-                    class="rsvp__input rsvp__input--full"
+                    :class="['rsvp__input rsvp__input--full', nameErrorClass]"
                     placeholder="Nombre"
                     v-model="name"
-                    name="name"
+                    name="name *"
                   />
                   <input
                     type="email"
                     v-model="email"
                     name="email"
-                    class="rsvp__input rsvp__input--marg-r"
-                    placeholder="Correo"
+                    :class="['rsvp__input rsvp__input--marg-r', emailErrorClass]"
+                    placeholder="Correo *"
                   />
                   <input
                     type="text"
                     v-model="guess"
                     name="guess"
-                    class="rsvp__input"
-                    placeholder="№ de acompañantes"
+                    :class="['rsvp__input', guessErrorClass]"
+                    placeholder="№ de acompañantes *"
                   />
                   <textarea
                     v-model="comment"
@@ -141,6 +141,9 @@
                   />
                   <p v-if="sent" style="margin-top: 20px; font-size: 20px">
                     Confirmación enviada
+                  </p>
+                  <p v-if="error" class="error" style="margin-top: 20px; font-size: 20px">
+                    Por favor llene todos los campos requeridos (*)
                   </p>
                 </form>
               </div>
@@ -171,40 +174,81 @@ export default {
       email: "",
       message: "",
       guess: "",
+      nameErrorClass: "",
+      emailErrorClass: "",
+      messageErrorClass: "",
+      guessErrorClass: "",
       comment: "",
+      error: false,
       sent: false,
     };
   },
   methods: {
-    sendEmail() {
-      try {
-        emailjs.send("service_o8a2lz2", "template_00h1d8s", {
-          from_name: this.name,
-          message:
-            "Invitados:" +
-            this.guess +
-            " \n | Comentario:" +
-            this.comment +
-            " \n | Correo:" +
-            this.email,
-        });
-      } catch (error) {
-        console.log({ error });
+    clearErrors(){
+      this.nameErrorClass= ""
+      this.emailErrorClass= ""
+      this.messageErrorClass= ""
+      this.guessErrorClass= ""
+    },
+    validatefields(){ 
+      let validated = true;
+
+      if (this.name === ""){
+        this.nameErrorClass = 'error'
+        validated = false
       }
 
-      // Reset form field
-      this.name = "";
-      this.email = "";
-      this.message = "";
-      this.guess = "";
-      this.comment = "";
-      this.sent = true;
+      if (this.email === ""){
+        this.emailErrorClass = 'error'
+        validated = false
+      }
+
+      if (this.guess === ""){
+        this.guessErrorClass = 'error'
+        validated = false
+      }
+
+      this.error = !validated
+
+      return validated;
+    },
+    sendEmail() {
+      this.clearErrors()
+      if(this.validatefields()){      
+        try {
+          emailjs.send("service_o8a2lz2", "template_00h1d8s", {
+            from_name: this.name,
+            message:
+              "Invitados:" +
+              this.guess +
+              " \n | Comentario:" +
+              this.comment +
+              " \n | Correo:" +
+              this.email,
+          });
+        } catch (error) {
+          console.log({ error });
+        }
+
+        // Reset form field
+        this.name = "";
+        this.email = "";
+        this.message = "";
+        this.guess = "";
+        this.comment = "";
+        this.sent = true;
+      }
+      
     },
   },
 };
 </script>
 
 <style scoped>
+.error{
+  border: 1px solid red;
+}
+
 .text-banner {
   margin-bottom: 50px;
 }

@@ -13,7 +13,7 @@
                                 <li class="menu-item "><a href="/#/laboda">La boda</a></li>
                                 <li class="menu-item "><a href="/#/tedecocina">Té de Cocina</a></li>
                                 <li class="menu-item "><a href="/#/lista">Lista de regalos</a></li>
-                                <li class="menu-item "><a href="/#/galeria">Galería</a></li>
+                                <!-- <li class="menu-item "><a href="/#/galeria">Galería</a></li> -->
                                 <li class="menu-item "><a href="#contactos">Contactos</a></li>
                             </ul>
                             <ul class="main-menu dl-menu2" v-if="showMenu" @click="hideMenu">
@@ -22,7 +22,7 @@
                                 <li class="menu-item "><a href="/#/laboda">La boda</a></li>
                                 <li class="menu-item "><a href="/#/tedecocina">Té de Cocina</a></li>
                                 <li class="menu-item "><a href="/#/lista">Lista de regalos</a></li>
-                                <li class="menu-item "><a href="/#/galeria">Galería</a></li>
+                               <!--  <li class="menu-item "><a href="/#/galeria">Galería</a></li>-->
                                 <li class="menu-item "><a href="#contactos">Contactos</a></li>
                             </ul>
                             <div class="nav-menu-icon"><i></i></div>

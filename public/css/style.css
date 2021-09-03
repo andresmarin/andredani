@@ -189,6 +189,11 @@ html {
           box-sizing: border-box;
 }
 
+.main-header {
+  background-size: cover;
+  position: relative;
+}
+
 /* Common styles of menus */
 @media screen and (max-width: 991px) {
   .dl-menuwrapper {
@@ -1440,6 +1445,9 @@ html {
 .main-header {
   background-size: cover;
   position: relative;
+  color: red;
+  background-position-y: center;
+  background-image: url("../img/portada.png") !important;
 }
 
 .main-header:before {

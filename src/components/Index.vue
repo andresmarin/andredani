@@ -62,42 +62,42 @@
 - data-effect="mfp-zoom-out" -->
         <div class="gallery popup-gallery">
           <a
-            href="img/gallery/img-2.jpg"
+            
             class="gallery__item col-xs-12 col-sm-6 col-md-3"
             data-effect="mfp-zoom-in"
           >
             <img src="img/gallery/img-2.jpg" alt="" class="gallery__img" />
           </a>
           <a
-            href="img/gallery/img-3.jpg"
+            
             class="gallery__item col-xs-12 col-sm-6 col-md-3"
             data-effect="mfp-zoom-in"
           >
             <img src="img/gallery/img-3.jpg" alt="" class="gallery__img" />
           </a>
           <a
-            href="img/gallery/img-4.jpg"
+            
             class="gallery__item col-xs-12 col-sm-12 col-md-6"
             data-effect="mfp-zoom-in"
           >
             <img src="img/gallery/img-4.jpg" alt="" class="gallery__img" />
           </a>
           <a
-            href="img/gallery/img-5.jpg"
+            
             class="gallery__item col-xs-12 col-sm-12 col-md-6"
             data-effect="mfp-zoom-in"
           >
             <img src="img/gallery/img-5.jpg" alt="" class="gallery__img" />
           </a>
           <a
-            href="img/gallery/img-6.jpg"
+            
             class="gallery__item col-xs-12 col-sm-6 col-md-3"
             data-effect="mfp-zoom-in"
           >
             <img src="img/gallery/img-6.jpg" alt="" class="gallery__img" />
           </a>
           <a
-            href="img/gallery/img-7.jpg"
+            
             class="gallery__item col-xs-12 col-sm-6 col-md-3"
             data-effect="mfp-zoom-in"
           >
@@ -105,9 +105,9 @@
           </a>
         </div>
       </div>
-      <div class="row text-center marg-lg-b140 marg-sm-b40">
-        <a href="/#/galeria" class="our-mary__link hvr-glow ">Ver Galería</a>
-      </div>
+     <div class="row text-center marg-lg-b140 marg-sm-b40">
+       <!--  <a href="/#/galeria" class="our-mary__link hvr-glow ">Ver Galería</a>-->
+      </div> 
     </div>
     <GifRegBanner />
     
