@@ -8,5 +8,8 @@ module.exports = {
           .loader('css-loader')
           .loader('style-loader')
         .end()
-    }
+    },
+    devServer: {
+      proxy: 'http://localhost:8888/',
+  }
 }
