@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    <div class="container">
-      <div class="row text-center marg-lg-t125 marg-sm-t40">
-        <h2 class="block-title">Nuestra Historia</h2>
-      </div>
+    <div class="container marg-lg-t60 marg-sm-t40">
+      <h2 class="block-title">Nuestra Historia</h2>
+    </div>
+  <div class="container">
       <div class="story">
         <div class="row marg-lg-b120 marg-sm-b40 localPadding">
           <div class="col-md-6 padd-only-sm padd-only-xs">

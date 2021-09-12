@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="container marg-lg-t130 marg-sm-t40">
+    <div class="container marg-lg-t60 marg-sm-t40">
           <h2 class="block-title">La boda</h2>
       </div>
     <!-- ADDRESS -->

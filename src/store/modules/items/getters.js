@@ -10,5 +10,8 @@ export default {
   },
   total_count: state => {
     return state.totalCount
-  }
+  },
+  selectedItems: state => {
+    return state.selectedItems
+  },
 }

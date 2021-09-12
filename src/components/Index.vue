@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="home">
     <!-- ROUND COUNDOWN -->
+    <div class="container marg-lg-t60 marg-sm-t40" style="text-align: center;">
+      <h2 class="block-title">¡Nos vamos a casar!</h2>
+      <h3 class="block-subtitle">El domingo 14 de noviembre del 2021</h3>
+    </div>
     <div class="container">
-      <div class="row text-center marg-lg-t110 marg-sm-t40">
-        <h2 class="block-title">¡Nos vamos a casar!</h2>
-        <h3 class="block-subtitle">El domingo 14 de noviembre del 2021</h3>
-      </div>
       <div class="row marg-lg-t55 marg-sm-t15">
         <div class="col-md-12 no-padd-md">
           <template>
@@ -37,7 +37,7 @@
               personas especiales de nuestra vidas. ¡Esperamos que nos puedan
               acompañar!
             </h3>
-            <a href="/#/tedecocina" class="our-mary__link hvr-glow gray">Ver Té de Cocina</a>
+            <a href="/#/tedecocina" class="our-mary__link hvr-glow gray" >Ver Té de Cocina</a>
           
           </div>
         </div>

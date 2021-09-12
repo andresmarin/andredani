@@ -26,5 +26,6 @@ export default {
 <style  lang="scss" scoped>
 .regalos{
     width: 300px;
+    margin: auto;
 }
 </style>
