@@ -172,11 +172,13 @@
         </div>
         <div class="row marg-lg-t20 marg-lg-b110 row marg-sm-t10 marg-sm-b30">
           <ul id="items">
+            <!-- v-show="item.quantity_needed > 0" -->
             <li
-              v-show="item.quantity_needed > 0"
+              
               v-for="(item, index) in items"
               :key="index"
               class="gifts__item_local"
+              :class="parseInt(item.quantity_needed) === 0 ? 'purchased' : 'no'"
             >
               <!--<img
                 src="img/logos/logo-1.png" 
@@ -218,19 +220,17 @@
                 <li style="width: 80px">
                   <vue-numeric-input
                     v-model="quantity[index]"
-                    :min="1"
-                    :max="
-                      parseInt(item.quantity_needed) === 0
-                        ? 100
-                        : parseInt(item.quantity_needed)
-                    "
+                    :min="parseInt(item.quantity_needed) === 0 ? 0 : 1"
+                    :max="parseInt(item.quantity_needed)"
                     size="80px"
                     align="center"
+                    :disabled = "parseInt(item.quantity_needed) === 0"
                   >
                   </vue-numeric-input>
                 </li>
                 <li>
                   <input
+                    v-show="parseInt(item.quantity_needed) > 0"
                     @click="addToCart(item, index)"
                     :disabled="disabled(item.item_id)"
                     data-v-47476810=""
@@ -240,7 +240,13 @@
                   />
                 </li>
               </ul>
+                <div
+                  class="purchased"
+                  v-show="parseInt(item.quantity_needed) === 0">
+                    <img class="stamp" src="/img/comprado.png">
+              </div>
             </li>
+            
           </ul>
           <div>
             <div></div>
@@ -476,6 +482,17 @@ export default {
 </script>
 
 <style scoped>
+
+.purchased{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.purchased .stamp{
+  width: 100%;
+}
+
 .error {
   border: 1px solid red;
 }
